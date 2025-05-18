@@ -1,5 +1,5 @@
 #!/bin/bash
-
+exec > >(tee -a "script_log.txt") 2>&1
 echo "Обновление и установка необходимых пакетов..."
 apt update && apt install sudo -y
 sudo apt update && sudo apt upgrade -y
